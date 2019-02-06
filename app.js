@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const path = require('path');
 const express = require('express');
-
+const applicants = require('./applications');
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* todo aðrar stillingar á express appi */
+
+app.use(applicants);
 
 function notFoundHandler(req, res, next) { // eslint-disable-line
   res.status(404).render('error', { title: '404', error: '404 fannst ekki' });
