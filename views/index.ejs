@@ -1,0 +1,26 @@
+<%- include('header') -%>
+
+<h2>Atvinnuumsókn</h2>
+<form method="post" action="/post" enctype="application/x-www-form-urlencoded">
+    <div>
+    <label for="name">Nafn:</label>
+    <input type="text" name="name">
+    <label for="mail">Netfang:</label>
+    <input type="email" name="email">
+    <label for="phonenumber">Sími:</label>
+    <input type="tel" name="phone" required>
+    <label for="text">Kynning á þér:</label>
+    <textarea name="text"></textarea>
+    </div>
+    <div>
+    <h3>Starf sem sótt er um:</h3>
+    <input type="radio" name="job" value="programmer">
+    <label for="programmer">Forritari</label>
+    <input type="radio" name="job" value="design">
+    <label for="design">Hönnuður</label>
+    <input type="radio" name="job" value="projectManager">
+    <label for="projectManager">Verkefnastjóri</label>
+    </div>
+    <button>Senda umsókn</button>
+  </form>
+<%- include('footer') -%>
